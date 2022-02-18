@@ -361,7 +361,7 @@
                 },
             },
             created: function () {
-                fetch('http://localhost:3000/collection/products').then(
+                fetch('https://cst31455.herokuapp.com/collection/products').then(
                     function (response) {
                         response.json().then(
                             function (json) {
@@ -465,7 +465,7 @@
                     const newOrder = { 'name': this.customerDetails.name, 'phone': this.customerDetails.phone, 'orderItems': orderArray }
 
                     // fetch to post new orders to the DB
-                    fetch('http://localhost:3000/collection/orders', {
+                    fetch('https://cst31455.herokuapp.com/collection/orders', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -491,7 +491,7 @@
                     alert("Order Submitted");
 
                     // fetch to update product infromation after checkout
-                    fetch('http://localhost:3000/collection/products').then(
+                    fetch('https://cst31455.herokuapp.com/collection/products').then(
                         function (response) {
                             response.json().then(
                                 function (json) {
@@ -509,7 +509,7 @@
                     const attributeValue = "availableSpace";
 
                     // fetch updates product spaces on DB
-                    fetch(`http://localhost:3000/collection/products/${id}/reduce/${attributeValue}/${spaceValue}`, {
+                    fetch(`https://cst31455.herokuapp.com/collection/products/${id}/reduce/${attributeValue}/${spaceValue}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
@@ -526,7 +526,7 @@
                     // Covert search term to lowercase
                     let searchTerm = this.search.toLowerCase();
                     // sending the search term to the server
-                    fetch('http://localhost:3000/collection/products/search', {
+                    fetch('https://cst31455.herokuapp.com/collection/products/search', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
